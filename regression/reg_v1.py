@@ -989,11 +989,7 @@ def train_function(config):
                                             'exp_r2':exp_r2},
                         global_step = epoch_num+1)
         
-        # save best model for one group of parameters
-        # sum_r2 = 0.2*new_text_r2 + 0.8*val_r2
-        if val_r2 > best_val_r2:
-            best_val_r2 = val_r2
-            torch.save(reg_model, f"./outputs/reg_model_saved/{paras_string}.pt")
+       
 
     writer.close()
 
